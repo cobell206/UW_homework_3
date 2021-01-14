@@ -28,7 +28,7 @@ function generatePassword() {
   while (true) {
     var password_length = prompt("Enter a number between 8 and 128")
 
-    if (isNaN(password_length)) {
+    if (isNaN(password_length) || password_length < 8 || password_length >128) {
       alert("That answer isn't a number or is out of range, try again...")
     }
     else if (password_length >= 8 && password_length <= 128) {
@@ -46,6 +46,9 @@ function generatePassword() {
 
     if (lowercase || uppercase || specialCharacters) {
       break
+    }
+    else {
+      alert("Please select at least one type of desired character...")
     }
   }
 
